@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+
+  front-end:
+    container_name: front-end
+    build:
+      context: frontend
+      dockerfile: Dockerfile-prod
+    volumes:
+      - '.:/frontend/app'
+      - '/frontend/app/node_modules'
+    ports:
+      - '80:80'
+
+
+  back-end:
+    container_name: back-end
+    build:
+      context: backend
+      dockerfile: Dockerfile-prod
+    volumes:
+      - '.:/backend/app'
+      - '/backend/app/node_modules'
+    ports:
+      - '3000:3000'
