@@ -1,4 +1,6 @@
 export interface Movie {
+  total_results: number;
+  total_pages: number;
   popularity: number;
   vote_count: number;
   poster_path: string;

@@ -42,11 +42,11 @@
     .card-movie {
        width: 75%;
     }
+}
 
-    .mat-paginator {
-        bottom: 0;
-        right: 0 !important;
-        display: table-row;
-        background-color: black !important;
-    }
+.mat-paginator {
+    bottom: 0;
+    right: 0 !important;
+    display: table-footer-group;
+    background-color: black !important;
 }
