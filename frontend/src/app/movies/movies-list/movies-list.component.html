@@ -1,25 +1,26 @@
-<app-header></app-header>
+<app-header (datasetChange)="datasetChange($event)"></app-header>
 <section class="movies">
-
  <mat-progress-bar *ngIf="loading" class="loading-bar" color="accent" mode="indeterminate"></mat-progress-bar>
- 
   <div class="list" *ngIf="movies && !loading" style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; text-align: center;">
     <div class="card" *ngFor="let data of movies">
       <div class="card-img">
-        <img src="https://image.tmdb.org/t/p/w500/{{data.poster_path}}" alt="data.title" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 603.914px;">
+        <img src="https://image.tmdb.org/t/p/w500/{{data.poster_path}}" alt="data.title" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 500px;">
       </div>
       <div class="movie-info">
-        <p style="font-weight: bold; margin-bottom: 6px; font-size: larger; margin-top: 32px;">{{ data.title }}</p>
+        <p style="font-weight: bold; margin-bottom: 6px; font-size: larger; margin-top: 10px;">{{ data.title }}</p>
         <p style="font-weight: 300; margin-top: 0;"> Release date: {{ data.release_date | date:'longDate'}}</p>
     </div>
    </div>
   </div>
 </section>
-<mat-paginator [length]="length"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="pageEvent = getMoviesFromPageChange($event)">
-</mat-paginator>
+<div class="paginator">
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [hidePageSize]="true"
+    (page)="pageEvent = getMoviesFromPageChange($event)">
+  </mat-paginator>
+</div>
 <app-footer></app-footer>
 
 

@@ -29,6 +29,25 @@
         padding: 10px;
     }
 
+    @media screen and (max-width: 360px) {
+        .card {
+            width: 45%;
+            left: 25%;
+        };
+      }
+
+    @media screen and (min-width: 361) and (max-width: 768px) {
+        .card {
+            width: 45%;
+        };
+      }
+
+    @media only screen and (min-width: 769px) and (max-width: 993px) {
+        .card {
+            width: 31%;
+        };
+    }
+
     .card-img {
         transition: transform .2s; 
     }
@@ -45,8 +64,18 @@
 }
 
 .mat-paginator {
-    bottom: 0;
-    right: 0 !important;
-    display: table-footer-group;
-    background-color: black !important;
+    display: inline-block;
+    background-color: black;
+    padding-top: 23px;
+    font-size: 3.3vh;
+}
+
+.mat-paginator:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.paginator {
+    clear: both;
 }

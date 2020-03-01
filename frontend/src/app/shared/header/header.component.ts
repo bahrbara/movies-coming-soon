@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector   : 'app-header',
@@ -6,11 +8,20 @@ import { Component } from '@angular/core';
     styleUrls  : ['./header.component.scss']
 })
 export class HeaderComponent {
+    @Output() datasetChange = new EventEmitter();
 
-    constructor() {}
+    form: FormGroup;
+
+    constructor(
+       private formBuilder: FormBuilder,
+       private router: Router
+    ) {
+        this.form = this.formBuilder.group({
+            query: ['']
+          });
+        }
 
     searchMovies() {
-        console.log('ok');
+        this.datasetChange.emit(this.form.get('query').value);
     }
-
 }

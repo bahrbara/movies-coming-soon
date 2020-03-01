@@ -20,4 +20,14 @@ export class MoviesService {
   getMovieById(id: number): Observable<Movie> {
     return this.http.get<Movie>(`${environment.api.url}/movie/${id}`);
   }
+
+  getGenres(): Observable<any> {
+    const href = `${environment.api.url}/genres`;
+    return this.http.get<any>(href);
+  }
+
+  getMoviesBySearch(page: number, query: string): Observable<any> {
+    const href = `${environment.api.url}/movies/search/${page + 1}/${query}`;
+    return this.http.get<any>(href);
+  }
 }
