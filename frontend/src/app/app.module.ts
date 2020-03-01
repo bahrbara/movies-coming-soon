@@ -1,8 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app.routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MoviesModule } from './movies/movies.module';
+import { PagesModule } from './pages/pages.module';
+import { ComponentModule } from './shared/components.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,9 +16,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ComponentModule,
+    MoviesModule,
+    MatFormFieldModule,
+    PagesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

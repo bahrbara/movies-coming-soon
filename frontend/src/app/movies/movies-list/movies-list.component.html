@@ -1,0 +1,14 @@
+<app-header></app-header>
+<section class="movies">
+  <div *ngIf="loading">
+    <mat-spinner class="spinner"></mat-spinner>
+ </div>
+
+  <div class="list" *ngIf="!loading && moviesList$ | async as data">
+     <app-movies-cards *ngFor="let data of moviesList$" [data]="data"></app-movies-cards>
+  </div>
+</section>
+<app-footer></app-footer>
+
+
+

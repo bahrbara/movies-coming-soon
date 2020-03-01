@@ -1,0 +1,6 @@
+<div class="card">
+  <img src="data.poster_path" alt="data.title" [routerLink]="['/data', data.id]">
+  <div>
+    <h1>{{ data.title }}</h1>
+    <h5> Release date: {{ data.release_date | date:'longDate'}}</h5>
+</div>
