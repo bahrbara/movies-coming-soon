@@ -12,11 +12,11 @@ import { Movie } from './movie.model';
 export class MoviesService {
   constructor( private http: HttpClient) { }
 
-  getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${environment.api.url}/movies`);
+  getMovies(): Observable<any> {
+    return this.http.get<any>(`${environment.api.url}/movies`);
   }
 
-  getMovieById(id: string): Observable<Movie> {
+  getMovieById(id: number): Observable<Movie> {
     return this.http.get<Movie>(`${environment.api.url}/movie/${id}`);
   }
 }

@@ -2,16 +2,44 @@
     background: #262626;
     position: relative;
 
-    .spinner{
+    .loading-bar{
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 56px;
         right: 0;
-        background: aqua;
-        z-index: 1;
-        display: flex;
-        align-items: center;
+        width: 100%;
+    }
+
+    .movie-info {
+        color: #ffffff;
+    }
+
+    .list {
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .card {
+        float: left;
+        width: 23%;
+        padding: 10px;
+    }
+
+    .card-img {
+        transition: transform .2s; 
+    }
+
+    .card-img:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+    }
+
+    .card-movie {
+       width: 75%;
     }
 }

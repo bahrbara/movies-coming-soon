@@ -12,16 +12,14 @@ import { Movie } from '../movie.model';
   styleUrls: ['./movies-list.component.scss']
 })
 export class MoviesListComponent implements OnInit {
-  movies: Movie[];
-  loading = true;
+  movies: any;
+  imageUrl = 'https://image.tmdb.org/t/p/w500/';
 
   constructor(private service: MoviesService) { }
 
   ngOnInit() {
     this.service.getMovies().subscribe((data) => {
-      this.movies = data;
-      this.loading = false;
+      this.movies = data.results;
     });
   }
-
 }

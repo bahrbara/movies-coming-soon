@@ -1,0 +1,28 @@
+<app-header></app-header>
+<section>
+  <div *ngIf="movie" class="movie">
+    <div class="movie-cover-img">
+      <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}">
+      <h1 class="movie-title">{{movie.title}}</h1>
+      <button id="matButtonAverage" mat-fab>{{movie.vote_average}}</button>
+    </div>
+
+    <div class="movie-info">
+      <div class="movie-info-overview">{{movie.overview}}</div>
+      <div class="column left">
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title">
+      </div>
+      <div class="column middle">
+        <p><span>Release date:</span> {{movie.release_date | date:'longDate'}}</p>
+        <p><span>Title:</span> {{movie.original_title}}</p>
+        <p><span>Original language:</span> {{movie.original_language | uppercase }}</p>
+      </div>
+      <div class="column right">
+        <p><span>Popularity:</span> {{movie.popularity}}</p>
+        <p><span>Votes:</span> {{movie.vote_count}}</p>
+        <p><span>Vote average:</span> {{movie.vote_average}}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
