@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 import { Movie } from './movie.model';
+import { MoviesDao } from './movies.dao';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,9 @@ import { Movie } from './movie.model';
 export class MoviesService {
   constructor( private http: HttpClient) { }
 
-  getMovies(): Observable<any> {
-    return this.http.get<any>(`${environment.api.url}/movies`);
+  getMovies(page: number): Observable<any> {
+    const href = `${environment.api.url}/movies/${page + 1}`;
+    return this.http.get<MoviesDao>(href);
   }
 
   getMovieById(id: number): Observable<Movie> {

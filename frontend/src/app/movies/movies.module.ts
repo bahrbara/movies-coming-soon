@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule, MatPaginatorModule, MatProgressBarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatPaginatorModule, MatProgressBarModule, MatIconModule, MatButtonModule, MatSortModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MoviesRoutingModule } from './movies-routing.module';
@@ -22,7 +22,9 @@ import { ComponentModule } from '../shared/components.module';
     ComponentModule,
     MatProgressBarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     MoviesListComponent,

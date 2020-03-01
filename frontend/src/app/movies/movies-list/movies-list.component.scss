@@ -1,5 +1,5 @@
 .movies {
-    background: #262626;
+    background: #000000;
     position: relative;
 
     .loading-bar{
@@ -41,5 +41,12 @@
 
     .card-movie {
        width: 75%;
+    }
+
+    .mat-paginator {
+        bottom: 0;
+        right: 0 !important;
+        display: table-row;
+        background-color: black !important;
     }
 }

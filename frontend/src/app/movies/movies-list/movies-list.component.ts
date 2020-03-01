@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { PageEvent } from '@angular/material';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { MatPaginator, MatSort } from '@angular/material';
 
 import { MoviesService } from '../movies.service';
-import { Movie } from '../movie.model';
+import { MoviesDao } from '../movies.dao';
 
 
 @Component({
@@ -13,12 +12,14 @@ import { Movie } from '../movie.model';
 })
 export class MoviesListComponent implements OnInit {
   movies: any;
-  imageUrl = 'https://image.tmdb.org/t/p/w500/';
+  pages: number = 0;
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private service: MoviesService) { }
 
   ngOnInit() {
-    this.service.getMovies().subscribe((data) => {
+    this.service.getMovies(this.pages).subscribe((data) => {
+      console.log(data);
       this.movies = data.results;
     });
   }
