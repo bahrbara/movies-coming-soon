@@ -13,6 +13,11 @@ git clone https://github.com/bahrbara/movies-coming-soon.git
 # step into local repo
 cd movies-coming-soon
 ```
+
+#### Prerequisites
+* NPM
+* Docker + Docker Compose
+
 #### Configuration
 
 Next we need to create `.env` file, which contains all the necessary
@@ -40,8 +45,8 @@ movies-coming-soon/
   README.md
 ```
 
-At **backend** folder we have the "Movies Coming Soon" NodeJs Application.
-At **frontend** folder we have the "Movies Coming Soon" frontend in Angular 7.
+At **backend** folder we have the "Cinephilia" NodeJs Application.
+At **frontend** folder we have the "Cinephilia" frontend in Angular 7.
 
 #### Commands
 
@@ -64,6 +69,11 @@ make start
 #check if its ok
 make state
 ```
+
+##### Built With
+* NodeJS - Backend app server
+* Angular 7 - Frontend framework
+* Angular Material - Material Design components for Angular
 
 ##### Makefile
 
