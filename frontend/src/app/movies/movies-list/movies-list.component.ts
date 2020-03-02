@@ -32,10 +32,11 @@ export class MoviesListComponent implements OnInit {
   }
 
   getMoviesFromPageChange(event?:PageEvent):any {
-    if (!this.isSearch) {
+    if (!this.isSearch && event) {
       this.getMovies(event.pageIndex);
+    } else if (event) {
+      this.getMoviesByQuerySearch(event.pageIndex, this.query);
     }
-    this.getMoviesByQuerySearch(event.pageIndex, this.query);
   }
 
   getMovies(page) {
