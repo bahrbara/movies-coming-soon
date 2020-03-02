@@ -14,13 +14,17 @@
       </div>
       <div class="column middle">
         <p><span>Release date:</span> {{movie.release_date | date:'longDate'}}</p>
+        <p><span>Status:</span> {{movie.status}}</p>
         <p><span>Title:</span> {{movie.original_title}}</p>
-        <p><span>Original language:</span> {{movie.original_language | uppercase }}</p>
+        <p><span>Genres:</span><span style="font-weight: normal;" *ngFor="let genre of movie.genres; let isLast=last"> {{genre.name}}{{isLast ? '' : ', '}} </span></p>
+        <p><span>Production companies:</span><span style="font-weight: normal;" *ngFor="let cia of movie.production_companies; let isLast=last"> {{cia.name}}{{isLast ? '' : ', '}} </span></p>
       </div>
       <div class="column right">
+        <p><span>Original language:</span> {{movie.original_language | uppercase }}</p>
         <p><span>Popularity:</span> {{movie.popularity}}</p>
         <p><span>Votes:</span> {{movie.vote_count}}</p>
         <p><span>Vote average:</span> {{movie.vote_average}}</p>
+        <p><span>Production contries:</span><span style="font-weight: normal;" *ngFor="let country of movie.production_countries; let isLast=last"> {{country.name}}{{isLast ? '' : ', '}} </span></p>
       </div>
     </div>
 

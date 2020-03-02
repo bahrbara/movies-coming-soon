@@ -4,7 +4,8 @@
   <div class="list" *ngIf="movies && !loading" style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; text-align: center;">
     <div class="card" *ngFor="let data of movies">
       <div class="card-img">
-        <img src="https://image.tmdb.org/t/p/w500/{{data.poster_path}}" alt="data.title" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 500px;">
+        <img *ngIf="data.poster_path" src="https://image.tmdb.org/t/p/w500{{data.poster_path}}" alt="data.title" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 500px;">
+        <img *ngIf="!data.poster_path" src="../../../assets/images/noImage.png" alt="no image avaiable" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 500px;">
       </div>
       <div class="movie-info">
         <p style="font-weight: bold; margin-bottom: 6px; font-size: larger; margin-top: 10px;">{{ data.title }}</p>

@@ -22,6 +22,6 @@ export class HeaderComponent {
         }
 
     searchMovies() {
-        this.datasetChange.emit(this.form.get('query').value);
+        this.datasetChange.emit(this.form.get('query').value.replace(/[^a-zA-Z ]/g, ""));
     }
 }

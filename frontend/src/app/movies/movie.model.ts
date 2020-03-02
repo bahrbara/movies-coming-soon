@@ -8,9 +8,12 @@ export interface Movie {
   backdrop_path: string;
   original_language: string;
   original_title: string;
-  genre_ids: number[];
+  genres: any;
   title: string;
   vote_average: number;
   overview: string;
   release_date: any;
+  status: string;
+  production_countries: any;
+  production_companies: any;
 }

@@ -40,18 +40,6 @@ app.get('/movie/:id', (req, res) => {
         })
 });
 
-//Get Genres List
-app.get('/genres', (req, res) => {
-    axios.get(`${urlTmdb}/genre/movie/list?api_key=${token}`)
-        .then((genres) => {
-            res.json(genres.data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
-}); 
-
 //Search Movie
 app.get('/movies/search/:page/:query', (req, res) => {
     axios.get(`${urlTmdb}/search/movie?api_key=${token}&page=${req.params.page}&query=${req.params.query}`)

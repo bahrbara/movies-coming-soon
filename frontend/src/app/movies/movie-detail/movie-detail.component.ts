@@ -13,6 +13,7 @@ import { MoviesService } from '../movies.service';
 export class MovieDetailComponent implements OnInit {
   id: number;
   movie: Movie;
+  genres: any;
 
   constructor(
     private route: ActivatedRoute,
