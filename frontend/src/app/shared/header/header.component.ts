@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
     selector   : 'app-header',
@@ -13,8 +12,7 @@ export class HeaderComponent {
     form: FormGroup;
 
     constructor(
-       private formBuilder: FormBuilder,
-       private router: Router
+       private formBuilder: FormBuilder
     ) {
         this.form = this.formBuilder.group({
             query: ['']
@@ -22,6 +20,7 @@ export class HeaderComponent {
         }
 
     searchMovies() {
-        this.datasetChange.emit(this.form.get('query').value.replace(/[^a-zA-Z ]/g, ""));
+        const query = this.form.get('query').value.normalize('NFKD').replace(/[^\w]/g, '');
+        this.datasetChange.emit(query);
     }
 }

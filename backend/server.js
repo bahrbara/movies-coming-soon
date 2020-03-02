@@ -19,7 +19,7 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 
 //Get Movies by Id
-app.get('/movie/:id', (req, res) => { 
+app.get('/movies/:id', (req, res) => { 
     axios.get(`${urlTmdb}/movie/${req.params.id}?api_key=${token}`)
         .then((movie) => {
             res.json(movie.data);
@@ -30,8 +30,8 @@ app.get('/movie/:id', (req, res) => {
 });
 
 //Get Movies List
-  app.get('/movies/:page', (req, res) => {
-    axios.get(`${urlTmdb}/movie/upcoming/?api_key=${token}&page=${req.params.page}`)
+  app.get('/movies', (req, res) => {
+    axios.get(`${urlTmdb}/movie/upcoming/?api_key=${token}&page=${req.query.page}`)
         .then((movies) => {
             res.json(movies.data);
         })
@@ -41,8 +41,9 @@ app.get('/movie/:id', (req, res) => {
 });
 
 //Search Movie
-app.get('/movies/search/:page/:query', (req, res) => {
-    axios.get(`${urlTmdb}/search/movie?api_key=${token}&page=${req.params.page}&query=${req.params.query}`)
+app.get('/search/movies', (req, res) => {
+    console.log(req.query);
+    axios.get(`${urlTmdb}/search/movie?api_key=${token}&page=${req.query.page}&query=${req.query.query}`)
         .then((movies) => {
             res.json(movies.data);
         })

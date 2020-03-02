@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (datasetChange)="datasetChange($event)"></app-header>
 <section>
   <div *ngIf="movie" class="movie">
     <div class="movie-cover-img">

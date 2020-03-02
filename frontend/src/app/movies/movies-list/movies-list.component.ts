@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material';
 
 import { MoviesService } from '../movies.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -22,12 +23,22 @@ export class MoviesListComponent implements OnInit {
   loading = false;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(private service: MoviesService) { }
+  constructor(
+    private service: MoviesService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(queryParams => {
+      this.query = queryParams.query;
+      this.isSearch = queryParams.query ? true : false;
+      });
+
     if (!this.isSearch) {
       this.getMovies(this.page);
       this.getMoviesFromPageChange();
+    } else {
+      this.getMoviesByQuerySearch(0, this.query)
     }
   }
 

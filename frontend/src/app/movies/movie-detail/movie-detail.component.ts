@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 import { Movie } from '../movie.model';
 import { MoviesService } from '../movies.service';
@@ -17,6 +17,7 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private service: MoviesService
   ) { }
 
@@ -32,5 +33,9 @@ export class MovieDetailComponent implements OnInit {
     this.service.getMovieById(id).subscribe((data) => {
       this.movie = data ? data : null;
     });
+  }
+
+  datasetChange(query) {
+    this.router.navigate([''], { queryParams: { query } });
   }
 }
