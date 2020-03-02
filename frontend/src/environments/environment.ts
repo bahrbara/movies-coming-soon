@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  title: 'Movies Comig Soon',
   api: {
     url: '//localhost:8080',
     image: 'https://image.tmdb.org/t/p',

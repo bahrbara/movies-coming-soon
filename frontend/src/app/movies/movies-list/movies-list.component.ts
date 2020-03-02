@@ -19,6 +19,7 @@ export class MoviesListComponent implements OnInit {
   length: number;
   pageSize = 20;
   isSearch = false;
+  loading = false;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private service: MoviesService) { }
@@ -30,7 +31,7 @@ export class MoviesListComponent implements OnInit {
     }
   }
 
-  getMoviesFromPageChange(event?:PageEvent) {
+  getMoviesFromPageChange(event?:PageEvent):any {
     if (!this.isSearch) {
       this.getMovies(event.pageIndex);
     }
