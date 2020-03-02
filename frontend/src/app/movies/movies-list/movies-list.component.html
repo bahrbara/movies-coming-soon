@@ -8,7 +8,7 @@
         <img *ngIf="!data.poster_path" src="../../../assets/images/noImage.png" alt="no image avaiable" [routerLink]="['/movie', data.id]" style="width: 75%; max-height: 500px;">
       </div>
       <div class="movie-info">
-        <p style="font-weight: bold; margin-bottom: 6px; font-size: larger; margin-top: 10px;">{{ data.title }}</p>
+        <p style="font-weight: bold; margin-bottom: 6px; font-size: larger; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ data.title }}</p>
         <p style="font-weight: 300; margin-top: 0;"> Release date: {{ data.release_date | date:'longDate'}}</p>
     </div>
    </div>
