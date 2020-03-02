@@ -1,0 +1,70 @@
+header {
+  .navbar-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    justify-content: space-between;
+
+    .flex-spacer {
+      flex-grow: 1;
+    }
+
+    .header-logo {
+      height: 80px;
+      margin: 0 0 5px 5px;
+      vertical-align: middle;
+    }
+
+    .search {
+      text-align: right;
+      width: 50%;
+
+      .search-icon {
+        color: #fff;
+      }
+    }
+
+    .mat-icon {
+      font-size: 30px;
+      vertical-align: text-bottom;
+    }
+
+    .mat-form-field-flex {
+      align-items: center;
+    }
+
+    .mat-form-field-infix {
+      display: contents;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: white;
+    }
+
+    input.mat-input-element {
+      color: white;
+    }
+  }
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: white!important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: white!important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-form-field {
+  width: 70% !important;
+}

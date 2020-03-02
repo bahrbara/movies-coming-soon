@@ -1,0 +1,84 @@
+.movies {
+    background: #000000;
+    position: relative;
+
+    .loading-bar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .movie-info {
+        color: #ffffff;
+    }
+
+    .list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .card {
+        float: left;
+        width: 23%;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 360px) {
+        .card {
+            width: 45%;
+            left: 25%;
+        };
+      }
+
+    @media screen and (min-width: 361) and (max-width: 768px) {
+        .card {
+            width: 45%;
+        };
+      }
+
+    @media only screen and (min-width: 769px) and (max-width: 993px) {
+        .card {
+            width: 31%;
+        };
+    }
+
+    .card-img {
+        transition: transform .2s; 
+    }
+
+    .card-img:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+    }
+
+    .card-movie {
+       width: 75%;
+    }
+}
+
+.mat-paginator {
+    display: inline-block;
+    background-color: black;
+    padding-top: 23px;
+    width: 100%;
+    font-size: large !important;
+}
+
+.mat-paginator:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.paginator {
+    clear: both;
+    width: 100%;
+    padding-bottom: 80px;
+}

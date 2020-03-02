@@ -1,0 +1,22 @@
+<header>
+  <nav class="navbar-header" aria-label="header">
+    <div>
+      <a routerLink="/" aria-label="Coming Soon">
+        <img class="header-logo"
+            src="../../../assets/images/logos.png"
+            alt="Coming Soon"/>
+      </a>
+    </div>
+    <div class="search">
+      <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+          <mat-label>Movie search</mat-label>
+          <input matInput placeholder="Search" formControlName="query">
+        </mat-form-field>
+        <button mat-icon-button aria-label="Serch button to search films" (click)="searchMovies()">
+          <mat-icon MatSuffix>search</mat-icon>
+        </button>
+      </form>
+    </div>
+  </nav>
+</header>

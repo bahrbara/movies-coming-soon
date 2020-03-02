@@ -1,0 +1,112 @@
+section {
+  .movie{
+    margin-top: 20px;
+
+    .movie-cover-img {
+      position: relative;
+      color: white;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .movie-title{
+        font-family:gordita, Helvetica, sans-serif;
+        font-style:normal;
+        height:75px;
+        letter-spacing:-2.4px;
+        line-height:75px;
+        margin-block-end:10px;
+        margin-block-start:0px;
+        margin-bottom:10px;
+        margin-inline-end:0px;
+        margin-inline-start:-3px;
+        margin-left:-3px;
+        margin-right:0px;
+        margin-top:0px;
+        opacity:1;
+        text-size-adjust:100%;
+        position: absolute;
+        text-shadow: 0px 0px 20px #000000;
+        top: 8em;
+        left: 1em;
+        font-size: 5vw;
+      }
+    }
+
+    .movie-info {
+      color: white;
+      display: table;
+      width: 100%;
+
+      .movie-info-overview {
+        font-weight: 300;
+        font-size: 1.5vw;
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .column {
+      float: left;
+
+      span {
+        font-weight: bold;
+      }
+
+      img {
+        width: 50%;
+      }
+    }
+
+    .left {
+      text-align-last: center;
+      display: table-cell;
+      width: 30%;
+    }
+
+    .middle{
+      line-height: 2.4;
+      font-size: 1.3vw;
+      display: table-cell;
+      width: 30%;
+    }
+    
+    .right {
+      line-height: 2.4;
+      font-size: 1.3vw;
+      display: table-cell;
+      width: 30%;
+      margin-left: 20px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+::ng-deep .mat-fab.mat-accent {
+  background-color: #f9ce35 !important;
+  color: white !important;
+  position: absolute !important;
+  top: 20em;
+  left: 1.9em;
+  font-size: 2.5vw;
+  width: 5%;
+  height: 9%;
+}
+
+::ng-deep .mat-fab .mat-button-wrapper {
+  font-size: 2.0vw;
+}
+
+@media screen and (max-width: 768px) {
+  #matButtonAverage {
+    display: none
+  };
+}
